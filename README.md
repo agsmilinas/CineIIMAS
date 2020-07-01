@@ -1,5 +1,11 @@
 # CineIIMAS
 A Java Web App (BootStrap) that simulates a webpage of a cinema. (MySQL DB is used)
+
+
+Tutorial link:
+https://youtu.be/I4CVZ0LKg-E
+
+
 ¡¡Bienvenidos a CineIIMAS!!
 La aplicación tiene las siguientes características:
 Servicio Registro de Usuarios: Se registran usuarios en una base de datos MySQL; esto se logra gracias a las integraciones Entity de SpringBoot (modelo de datos o Java Beans) , thymeleaf  y la clase CrudRepository de Spring Boot.
