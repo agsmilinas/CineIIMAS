@@ -1,0 +1,51 @@
+body {
+	background-image: url("https://vistapointe.net/images/cool-blue-5.jpg");
+	         font-family: 'Quicksand', sans-serif;
+	
+}
+
+.logo {
+	height: 1%;
+	width: 7%;
+}
+
+.jumbotron {
+	background-color: #fff;
+	margin: auto;
+}
+
+.slider {
+	width: 95%;
+	margin: auto;
+	overflow: hidden;
+}
+
+.btn-move {
+	margin-left: 45%;
+	margin-top: 5%;
+}
+
+.btn-nav {
+	margin-left: 2%;
+	margin-right: 2%;
+}
+
+.logo2 {
+	width: 20%
+}
+
+.movie_img {
+	height: 200x;
+	width: 200px;
+}
+
+footer {
+	background-color: #212529;
+	color: #fff;
+	height: 50px;
+	padding-bottom: 7%
+}
+
+.btn {
+	color: #fff;
+}

@@ -1,0 +1,139 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+	crossorigin="anonymous">
+<link
+	href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap"
+	rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+
+<title>CineIIMAS</title>
+
+</head>
+<body>
+
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<img class="logo"
+			src="https://raw.githubusercontent.com/agsmilinas/CineIIMAS/master/images/logo.png">
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+			<div class="navbar-nav">
+				<a style="padding-top: 5%" class="nav-item nav-link active img_cineiimas" href="/">CineIIMAS
+					<span class="sr-only">(current)</span>
+				</a>
+				<button type="button" class="btn btn-success btn-nav btn-login">Ingresar</button>
+				<button type="button" href="/registro"
+					class="btn btn-warning btn-nav btn-register">Registrarme</button>
+				<button type="button" class="btn btn-danger btn-nav btn-cartelera">Ver
+					toda la Cartelera</button>
+				<img class="logo2 inv_esp"
+					src="https://raw.githubusercontent.com/agsmilinas/CineIIMAS/master/images/invitado_especial.png"
+					hidden>
+			</div>
+		</div>
+	</nav>
+	<br>
+	<div class="jumbotron jumbo0">
+		<h1 align="center" style="color: white">E S T R E N O S</h1>
+		<div class="slider">
+			<ul>
+				<li><img
+					src="https://images-na.ssl-images-amazon.com/images/I/51H-kNS9S4L._AC_.jpg"
+					alt="" id="img_rol2"></li>
+				<li><img
+					src="https://images-na.ssl-images-amazon.com/images/I/71mTi3yd40L._AC_SY879_.jpg"
+					alt="" id="img_rol2"></li>
+				<li><img
+					src="https://3.bp.blogspot.com/-qBVigHggmQA/VB_colsEayI/AAAAAAAABcQ/sI24BB2vTfU/s1600/23p110303029.jpg"
+					alt="" id="img_rol2"></li>
+				<li><img
+					src="https://i.pinimg.com/originals/e6/28/5d/e6285d5a6a8c6033036a07d27c6d9c90.jpg"
+					alt="" id="img_rol2"></li>
+			</ul>
+		</div>
+		<button type="button" class="btn btn-primary btn-move btn-cartelera">Comprar
+			Boletos</button>
+
+	</div>
+	<br>
+	<div class="jumbotron inv_esp jumbo_inv_esp" hidden>
+		<h2 align="center" style="color: #fff">PROMOCIONES INVITADO
+			ESPECIAL</h2>
+		<div class="slider">
+			<ul>
+				<li><img id="img_promociones"
+					src="https://i0.wp.com/criteriohidalgo.com/wp-content/uploads/2018/03/4257.jpg?resize=660%2C330&ssl=1"
+					alt=""></li>
+				<li><img id="img_promociones"
+					src="https://cinemultiplex.co/sites/default/files/styles/comida_modal/public/4%20COMBO%20DE%20PELICULA.png?itok=9Req35Fe"
+					alt="" ></li>
+				<li><img id="img_promociones"
+					src="https://s3.amazonaws.com/statics3.cinemex.com/uploads/cms/iebenefits/6e68ebf1ef9ca8635d87c861f007b7f4-253x185.gif"
+					alt="" ></li>
+				<li><img id="img_promociones"
+					src="https://cinemultiplex.co/sites/default/files/styles/comida_modal/public/1%20SUPER%20COMBO%20CLUB.jpg?itok=th65aVhJ"
+					alt=""></li>
+
+			</ul>
+		</div>
+
+	</div>
+	<div class="jumbotron promociones">
+		<h2 align="center" style="color: #fff">P R O M O C I O N E S</h2>
+		<div class="slider">
+			<ul>
+				<li><img id="img_promociones"
+					src="https://los40.cl/wp-content/uploads/2019/09/dia-del-cine.jpg"
+					alt=""></li>
+				<li><img id="img_promociones"
+					src="https://ofertadescuentos.com/wp-content/uploads/2014/09/Movistar-dos-boletos-en-recarga.jpg"
+					alt=""></li>
+				<li><img id="img_promociones"
+					src="https://cinemultiplex.co/sites/default/files/styles/promociones_cuadrada/public/600x600.png?itok=oJ2FgrvD.jpg"
+					alt=""></li>
+						<li><img id="img_promociones"
+					src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRnTChgBW_AL23yFbxAtWFStauDvmXPYDFAYA&usqp=CAU"
+					alt=""></li>
+
+			</ul>
+		</div>
+
+	</div>
+	<footer
+		style="background-color: #212529; color: #fff; height: 50px; padding-bottom: 7%">
+		<br> <br>
+		<h6 align="center">TODOS LOS DERECHOS RESERVADOS ©. SITIO
+			DESARROLLADO POR ALEJANDRO SALINAS MEDINA</h6>
+		<br>
+	</footer>
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+		integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+		crossorigin="anonymous"></script>
+	<script src="/js/index.js"> </script>
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!doctype html>
+
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link
+	href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap"
+	rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+    <title>CineIIMAS |  Confirmación</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+   <img class="logo" src="https://raw.githubusercontent.com/agsmilinas/CineIIMAS/master/images/logo.png">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a style="padding-top:5%" class="nav-item nav-link active img_cineiimas" href="/">CineIIMAS <span class="sr-only">(current)</span></a>
+	<button type="button" class="btn btn-success btn-nav btn-login">Ingresar</button>
+		<button type="button" href="/registro" class="btn btn-warning btn-nav btn-register">Registrarme</button>
+		<button type="button" class="btn btn-danger btn-nav btn-cartelera">Ver toda la Cartelera</button>
+   <img class="logo2 inv_esp" src="https://raw.githubusercontent.com/agsmilinas/CineIIMAS/master/images/invitado_especial.png" hidden>
+    </div>
+  </div>
+</nav>
+<br>
+<div class="container">
+<div class="jumbotron">
+<h1 align="center">Confirmación de Compra</h1>
+<br>
+<h2 class="conf" align="center"> Confirmando Compra: </h2>
+<br>
+<br>
+<h3 class="hora"  align="center"> Horario</h3>
+<br>
+<br>
+<h4 align="center"> Gracias por tu Compra</h4>
+<br>
+<br>
+<h5 class="mmconf" align="center"> Se enviara un email de confirmación a:</h5>
+<br>
+
+    <div class="card" hidden>
+        <div class="jumbotron">
+            <h1 style="text-align: center;">Enviar e-mail</h1>
+        </div>
+        <form method="POST" th:action="@{/sendMail}" id="emailForm" class="container">
+            <div class="form-group">
+                <label>Nombre</label>
+                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-addon"><i class="fa fa-fw fa-user" aria-hidden="true"></i></div>
+                    <input type="text" class="id_mail " name="name" placeholder="Nombre"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Correo</label>
+                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-addon">@</div>
+                    <input type="text" class="form-control correo_mail" name="mail" placeholder="Correo electónico"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Asunto</label>
+                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-addon"><i class="fa fa-fw fa-envelope-open" aria-hidden="true"></i></div>
+                    <input type="text" class="form-control asunto_mail" name="subject" placeholder="Assunto"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Mensaje</label>
+                <textarea class="form-control mensaje_mail" rows="5" name="body"></textarea>
+            </div>
+            <div style="margin-bottom: 10px">
+                <button type="submit" class="btn btn-success">Enviar</button>
+            </div>
+        </form>
+    </div>
+
+
+</div>
+<br>
+
+</div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://smtpjs.com/v3/smtp.js"></script>
+	
+
+	
+	<footer style="background-color: #212529; color: #fff; height: 50px; padding-bottom: 7%">
+<br>
+<br>
+<h6 align="center">TODOS LOS DERECHOS RESERVADOS ©. SITIO DESARROLLADO POR ALEJANDRO SALINAS MEDINA</h6>
+<br>
+
+
+</footer>
+<script src="/js/confirmacion2.js"></script>
+</body>
+
+
+</html>

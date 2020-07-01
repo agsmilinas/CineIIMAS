@@ -1,0 +1,368 @@
+<!doctype html>
+
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    	<link rel="stylesheet" type="text/css" href="/css/venta.css">
+	<link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    
+    <title>CineIIMAS |  Venta Boletos</title>
+
+
+</head>
+
+<body onload="onLoaderFunc()">
+<div id="load_screen" hidden><div id="loading">Validando Pago &nbsp &nbsp &nbsp &nbsp &nbsp  <div class="spinner-border"></div>
+</div>
+</div>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+   <img class="logo" src="https://raw.githubusercontent.com/agsmilinas/CineIIMAS/master/images/logo.png">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a style="padding-top:5%" class="nav-item nav-link active img_cineiimas" href="/">CineIIMAS <span class="sr-only">(current)</span></a>
+	<button type="button" class="btn btn-success btn-nav btn-login">Ingresar</button>
+		<button type="button" href="/registro" class="btn btn-warning btn-nav btn-register">Registrarme</button>
+		<button type="button" class="btn btn-danger btn-nav btn-cartelera">Ver toda la Cartelera</button>
+   <img class="logo2 inv_esp" src="https://raw.githubusercontent.com/agsmilinas/CineIIMAS/master/images/invitado_especial.png" hidden>
+    </div>
+  </div>
+</nav>
+<br>
+<div class="container">
+<div class="jumbotron">
+<h1 align="center">Venta Boletos</h1>
+<br>
+<h2> Comprando </h2>
+<br>
+<div class="select" onchange="show_seats()">
+   <select name="format" id="format">
+      <option selected disabled>Seleccione Horario</option>
+      <option value="12:15">12:15</option>
+      <option value="14:35">14:35</option>
+      <option value="15:35">15:35</option>
+      <option value="18:00">18:00</option>
+      <option value="20:30">20:30</option>
+   </select>
+</div>
+<br>
+
+<div class="inputForm" hidden>
+<h2 align="center">Escoja su asiento</h2>
+<center>
+  Correo Electrónico: <input type="email" id="Username" required>
+  Número de boletos: <input type="number" id="Numseats" required>
+  <br/><br/>
+  <button class="btn btn-primary btn_start" onclick="takeData()">Comience a seleccionar</button>
+</center>
+<br>
+<h2 class="total" align="center" hidden> Total </h2>
+<br>
+</div>
+  
+
+<div class="seatStructure" hidden>
+<center>
+  
+<table id="seatsBlock">
+ <p id="notification"></p>
+  <tr>
+    <td colspan="14"><div class="screen">PANTALLA</div></td>
+    <td rowspan="20">
+      <div class="smallBox greenBox">Asiento Seleccionado</div> <br/>
+      <div class="smallBox emptyBox">Asiento Reservado</div><br/>
+    </td>
+    
+    <br/>
+  </tr>
+  
+  <tr>
+    <td></td>
+    <td>1</td>
+    <td>2</td>
+    <td>3</td>
+    <td>4</td>
+    <td>5</td>
+    <td></td>
+    <td>6</td>
+    <td>7</td>
+    <td>8</td>
+    <td>9</td>
+    <td>10</td>
+    <td>11</td>
+    <td>12</td>
+</tr>
+  
+<tr>
+    <td>A</td>
+    <td><input type="checkbox" class="seats" value="A1"></td>
+    <td><input type="checkbox" class="seats" value="A2"></td>
+    <td><input type="checkbox" class="seats" value="A3"></td>
+    <td><input type="checkbox" class="seats" value="A4"></td>
+    <td><input type="checkbox" class="seats" value="A5"></td>
+    <td class="seatGap"></td>
+    <td><input type="checkbox" class="seats" value="A6"></td>
+    <td><input type="checkbox" class="seats" value="A7"></td>
+    <td><input type="checkbox" class="seats" value="A8"></td>
+    <td><input type="checkbox" class="seats" value="A9"></td>
+    <td><input type="checkbox" class="seats" value="A10"></td>
+    <td><input type="checkbox" class="seats" value="A11"></td>
+    <td><input type="checkbox" class="seats" value="A12"></td>
+  </tr>
+  
+  <tr>
+    <td>B</td>
+    <td><input type="checkbox" class="seats" value="B1"></td>
+    <td><input type="checkbox" class="seats" value="B2"></td>
+    <td><input type="checkbox" class="seats" value="B3"></td>
+    <td><input type="checkbox" class="seats" value="B4"></td>
+    <td><input type="checkbox" class="seats" value="B5"></td>
+    <td></td>
+    <td><input type="checkbox" class="seats" value="B6"></td>
+    <td><input type="checkbox" class="seats" value="B7"></td>
+    <td><input type="checkbox" class="seats" value="B8"></td>
+    <td><input type="checkbox" class="seats" value="B9"></td>
+    <td><input type="checkbox" class="seats" value="B10"></td>
+    <td><input type="checkbox" class="seats" value="B11"></td>
+    <td><input type="checkbox" class="seats" value="B12"></td>
+  </tr>
+  
+  <tr>
+    <td>C</td>
+    <td><input type="checkbox" class="seats" value="C1"></td>
+    <td><input type="checkbox" class="seats" value="C2"></td>
+    <td><input type="checkbox" class="seats" value="C3"></td>
+    <td><input type="checkbox" class="seats" value="C4"></td>
+    <td><input type="checkbox" class="seats" value="C5"></td>
+    <td></td>
+    <td><input type="checkbox" class="seats" value="C6"></td>
+    <td><input type="checkbox" class="seats" value="C7"></td>
+    <td><input type="checkbox" class="seats" value="C8"></td>
+    <td><input type="checkbox" class="seats" value="C9"></td>
+    <td><input type="checkbox" class="seats" value="C10"></td>
+    <td><input type="checkbox" class="seats" value="C11"></td>
+    <td><input type="checkbox" class="seats" value="C12"></td>
+</tr>
+  
+<tr>
+    <td>D</td>
+    <td><input type="checkbox" class="seats" value="D1"></td>
+    <td><input type="checkbox" class="seats" value="D2"></td>
+    <td><input type="checkbox" class="seats" value="D3"></td>
+    <td><input type="checkbox" class="seats" value="D4"></td>
+    <td><input type="checkbox" class="seats" value="D5"></td>
+    <td></td>
+    <td><input type="checkbox" class="seats" value="D6"></td>
+    <td><input type="checkbox" class="seats" value="D7"></td>
+    <td><input type="checkbox" class="seats" value="D8"></td>
+    <td><input type="checkbox" class="seats" value="D9"></td>
+    <td><input type="checkbox" class="seats" value="D10"></td>
+    <td><input type="checkbox" class="seats" value="D11"></td>
+    <td><input type="checkbox" class="seats" value="D12"></td>
+</tr>
+  
+<tr>
+    <td>E</td>
+    <td><input type="checkbox" class="seats" value="E1"></td>
+    <td><input type="checkbox" class="seats" value="E2"></td>
+    <td><input type="checkbox" class="seats" value="E3"></td>
+    <td><input type="checkbox" class="seats" value="E4"></td>
+    <td><input type="checkbox" class="seats" value="E5"></td>
+    <td></td>
+    <td><input type="checkbox" class="seats" value="E6"></td>
+    <td><input type="checkbox" class="seats" value="E7"></td>
+    <td><input type="checkbox" class="seats" value="E8"></td>
+    <td><input type="checkbox" class="seats" value="E9"></td>
+    <td><input type="checkbox" class="seats" value="E10"></td>
+    <td><input type="checkbox" class="seats" value="E11"></td>
+    <td><input type="checkbox" class="seats" value="E12"></td>
+</tr>
+  
+<tr class="seatVGap"></tr>
+  
+<tr>
+    <td>F</td>
+    <td><input type="checkbox" class="seats" value="F1"></td>
+    <td><input type="checkbox" class="seats" value="F2"></td>
+    <td><input type="checkbox" class="seats" value="F3"></td>
+    <td><input type="checkbox" class="seats" value="F4"></td>
+    <td><input type="checkbox" class="seats" value="F5"></td>
+    <td></td>
+    <td><input type="checkbox" class="seats" value="F6"></td>
+    <td><input type="checkbox" class="seats" value="F7"></td>
+    <td><input type="checkbox" class="seats" value="F8"></td>
+    <td><input type="checkbox" class="seats" value="F9"></td>
+    <td><input type="checkbox" class="seats" value="F10"></td>
+    <td><input type="checkbox" class="seats" value="F11"></td>
+    <td><input type="checkbox" class="seats" value="F12"></td>
+</tr>
+  
+<tr>
+    <td>G</td>
+    <td><input type="checkbox" class="seats" value="G1"></td>
+    <td><input type="checkbox" class="seats" value="G2"></td>
+    <td><input type="checkbox" class="seats" value="G3"></td>
+    <td><input type="checkbox" class="seats" value="G4"></td>
+    <td><input type="checkbox" class="seats" value="G5"></td>
+    <td></td>
+    <td><input type="checkbox" class="seats" value="G6"></td>
+    <td><input type="checkbox" class="seats" value="G7"></td>
+    <td><input type="checkbox" class="seats" value="G8"></td>
+    <td><input type="checkbox" class="seats" value="G9"></td>
+    <td><input type="checkbox" class="seats" value="G10"></td>
+    <td><input type="checkbox" class="seats" value="G11"></td>
+    <td><input type="checkbox" class="seats" value="G12"></td>
+</tr>
+  
+<tr>
+    <td>H</td>
+    <td><input type="checkbox" class="seats" value="H1"></td>
+    <td><input type="checkbox" class="seats" value="H2"></td>
+    <td><input type="checkbox" class="seats" value="H3"></td>
+    <td><input type="checkbox" class="seats" value="H4"></td>
+    <td><input type="checkbox" class="seats" value="H5"></td>
+    <td></td>
+    <td><input type="checkbox" class="seats" value="H6"></td>
+    <td><input type="checkbox" class="seats" value="H7"></td>
+    <td><input type="checkbox" class="seats" value="H8"></td>
+    <td><input type="checkbox" class="seats" value="H9"></td>
+    <td><input type="checkbox" class="seats" value="H10"></td>
+    <td><input type="checkbox" class="seats" value="H11"></td>
+    <td><input type="checkbox" class="seats" value="H12"></td>
+</tr>
+  
+<tr>
+    <td>I</td>
+    <td><input type="checkbox" class="seats" value="I1"></td>
+    <td><input type="checkbox" class="seats" value="I2"></td>
+    <td><input type="checkbox" class="seats" value="I3"></td>
+    <td><input type="checkbox" class="seats" value="I4"></td>
+    <td><input type="checkbox" class="seats" value="I5"></td>
+    <td></td>
+    <td><input type="checkbox" class="seats" value="I6"></td>
+    <td><input type="checkbox" class="seats" value="I7"></td>
+    <td><input type="checkbox" class="seats" value="I8"></td>
+    <td><input type="checkbox" class="seats" value="I9"></td>
+    <td><input type="checkbox" class="seats" value="I10"></td>
+    <td><input type="checkbox" class="seats" value="I11"></td>
+    <td><input type="checkbox" class="seats" value="I12"></td>
+</tr>
+  
+<tr>
+    <td>J</td>
+    <td><input type="checkbox" class="seats" value="J1"></td>
+    <td><input type="checkbox" class="seats" value="J2"></td>
+    <td><input type="checkbox" class="seats" value="J3"></td>
+    <td><input type="checkbox" class="seats" value="J4"></td>
+    <td><input type="checkbox" class="seats" value="J5"></td>
+    <td></td>
+    <td><input type="checkbox" class="seats" value="J6"></td>
+    <td><input type="checkbox" class="seats" value="J7"></td>
+    <td><input type="checkbox" class="seats" value="J8"></td>
+    <td><input type="checkbox" class="seats" value="J9"></td>
+    <td><input type="checkbox" class="seats" value="J10"></td>
+    <td><input type="checkbox" class="seats" value="J11"></td>
+    <td><input type="checkbox" class="seats" value="J12"></td>
+</tr>
+  
+  
+</table>
+  
+<br/><button class="btn btn-primary" onclick="updateTextArea()">Confirmar Selección</button>
+</center>
+</div>
+      
+<br/><br/>
+
+<div class="displayerBoxes" hidden>
+<center>
+  <table class="Displaytable">
+  <tr>
+    <th>Correo</th>
+    <th>Número de Asientos</th>
+    <th>Asientos</th>
+  </tr>
+  <tr>
+    <td><textarea id="nameDisplay"></textarea></td>
+    <td><textarea id="NumberDisplay"></textarea></td>
+    <td><textarea id="seatsDisplay"></textarea></td>
+  </tr>
+</table>
+</center>
+</div>
+<br/><br/>
+
+<div class="page" hidden>
+  <div class="page__demo">
+  <h1 align="center"> Método de Pago</h1>
+  <br/>
+    <form class="payment-card">
+      <div class="payment-card__front">
+        <div class="payment-card__group">
+          <label class="payment-card__field">
+            <span class="payment-card__hint">Holder of card</span>
+            <input class="payment-card__input" placeholder="Holder of card"  name="holder-card" required>
+          </label>
+        </div>
+        <div class="payment-card__group">
+          <label class="payment-card__field">
+            <span class="payment-card__hint">Number of card</span>
+            <input type="text" class="payment-card__input" placeholder="Number of card" pattern="[0-9]{16}" name="number-card" required>
+          </label>
+        </div>
+        <div class="payment-card__group">
+          <span class="payment-card__caption">valid thru</span>
+        </div>
+        <div class="payment-card__group payment-card__footer">
+          <label class="payment-card__field payment-card__month">
+            <span class="payment-card__hint">Month</span>
+            <input type="text" class="payment-card__input" placeholder="MM" maxlength="2" pattern="[0-9]{2}" name="mm-card" required>
+          </label>
+          <span class="payment-card__separator">/</span>
+          <label class="payment-card__field payment-card__year">
+            <span class="payment-card__hint">Year</span>
+            <input type="text" class="payment-card__input" placeholder="YY" maxlength="2" pattern="[0-9]{2}" name="year-card" required>
+          </label>
+        </div>
+      </div>
+      <div class="payment-card__back">
+        <div class="payment-card__group">
+          <label class="payment-card__field payment-card__cvc">
+            <span class="payment-card__hint">CVC</span>
+            <input type="text" class="payment-card__input" placeholder="CVC" maxlength="3" pattern="[0-9]{3}" name="cvc-card" required>
+          </label>
+        </div>
+      </div>
+      <br/>
+      <button class="btn btn-primary payment-card__button" >Pagar</button>
+    </form>
+  </div>
+</div>
+</div>
+
+<br>
+
+</div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="/js/venta.js"> </script>
+	
+	<footer>
+<br>
+<br>
+<h6 align="center">TODOS LOS DERECHOS RESERVADOS ©. SITIO DESARROLLADO POR ALEJANDRO SALINAS MEDINA</h6>
+<br>
+
+
+</footer>
+</body>
+
+
+</html>
