@@ -60,7 +60,7 @@ public class Controlador {
     public String sendMail(@PathVariable String moviemail,@RequestParam("name") String name, @RequestParam("mail") String mail, @RequestParam("subject") String subject, @RequestParam("body") String body){
 
         String message = body +"\n\n Datos de contacto: " + "\nNombre: " + name + "\nE-mail: " + mail;
-        mailService.sendMail("cineiimas.info@gmail.com",moviemail,subject,message);
+        mailService.sendMail("YOUR_MAIL_WITH_SMTP_SERVER_SERVICE",moviemail,subject,message);
 
         return "confirmacion2";
     }
